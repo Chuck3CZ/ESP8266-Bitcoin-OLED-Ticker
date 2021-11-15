@@ -1,4 +1,4 @@
-# ESP8266-Bitcoin-OLED-Ticker
+# ESP8266 Bitcoin OLED Ticker
 Minimalist ESP8266 Oled Bitcoin price ticker
 
 ESP8266 Wemos D1 Mini +  0.66 inch 64X48 OLED 
