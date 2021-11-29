@@ -19,32 +19,24 @@ Written by Martin "Chuck3CZ" Gabrhel
 #include "Adafruit_SSD1306.h"
 #include "ArduinoJson.h"
 
-// SCL GPIO5
+// SCL GPIO5 
 // SDA GPIO4
+
 #define OLED_RESET 0  // GPIO0
 Adafruit_SSD1306 display(OLED_RESET);
 
-#define NUMFLAKES 10
-#define XPOS 0
-#define YPOS 1
-#define DELTAY 2
-
-const char* ssid     = "Matty_Network";
-const char* password = "7312314196";
-
+const char* ssid     = "YOUR_WIFI_SSID";
+const char* password = "YOUR_WIFI_PASSWORD";
 const char* host = "api.coindesk.com";
-
-
 
 void setup()   {
   Serial.begin(9600);
 
-  // by default, we'll generate the high voltage from the 3.3v line internally! (neat!)
+  // by default, generating the high voltage from the 3.3v line internally! (neat!)
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3C (for the 64x48)
   // init done
-
-  // Show image buffer on the display hardware. (Bitcoin logo)
-  // Since the buffer is intialized with an Adafruit splashscreen
+  
+  // Show image buffer on the display hardware. (Bitcoin logo) -- in adafruit Library
   // internally, this will display the splashscreen
   display.display();
   delay(2000); 
@@ -52,7 +44,6 @@ void setup()   {
   // Clear the buffer.
   display.clearDisplay();
   
-
   // init text display
   display.setTextSize(1);
   display.setTextColor(WHITE);
@@ -66,21 +57,22 @@ void setup()   {
   delay(2000);
   display.clearDisplay();
 
- Serial.println();
- Serial.println();
- Serial.print("Connecting to ");
- Serial.println(ssid);
+  Serial.println();
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
 
   WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
+  while (WiFi.status() != WL_CONNECTED) 
+  {
   delay(500);
   Serial.print(".");
   }
   
- Serial.println("");
- Serial.println("WiFi connected");
- Serial.println("IP address: ");
- Serial.println(WiFi.localIP());
+  Serial.println("");
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
 
 }
 
@@ -124,7 +116,6 @@ void loop() {
   jsonAnswer = answer.substring(jsonIndex);
   jsonAnswer.trim();
 
-
   // Obtaining prices like float value
   int rateIndex = jsonAnswer.indexOf("rate_float");
   String priceString = jsonAnswer.substring(rateIndex + 12, rateIndex + 18);
@@ -155,5 +146,4 @@ void loop() {
   display.println(" BITCOIN   TICKER");
   display.println("Price NOT  Found");
   }
-  
 }
