@@ -18,7 +18,7 @@ ESP8266 Wemos D1 Mini +  0.66 inch 64X48 OLED
 
 ## 🔧 SETUP
 
-Only what you need is **change WiFi setting** - configuration **line 28 and 29** in <a href="https://github.com/Chuck3CZ/ESP8266-Bitcoin-OLED-Ticker/blob/main/BTC_esp8266_ssd1360_64x48.ino">main .ino file</a>
+Only what you need is **change WiFi setting** configuration **line 28 and 29** in <a href="https://github.com/Chuck3CZ/ESP8266-Bitcoin-OLED-Ticker/blob/main/BTC_esp8266_ssd1360_64x48.ino">main .ino file</a>
 
 >    const char* ssid     = "YOUR_WIFI_SSID";   
 >    const char* password = "YOUR_WIFI_PASSWORD";   
