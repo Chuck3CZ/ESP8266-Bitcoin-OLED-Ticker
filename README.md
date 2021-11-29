@@ -18,5 +18,5 @@ ESP8266 Wemos D1 Mini +  0.66 inch 64X48 OLED
 # SETUP
 <a href="https://user-images.githubusercontent.com/31049131/141855094-01dc5a28-63c7-4538-a6fb-2701678cd886.png">Image of Arduino IDE setup</a>
 
->    const char* ssid     = "YOUR_WIFI_SSID";    //Type your WiFi SSID here    <br> 
->    const char* password = "YOUR_WIFI_PASSWORD";   //Type your WiFi password here   <br> 
+>    const char* ssid     = "YOUR_WIFI_SSID";   
+>    const char* password = "YOUR_WIFI_PASSWORD";   
