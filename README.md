@@ -23,8 +23,8 @@ Only what you need is **change WiFi setting** - configuration **line 28 and 29**
 >    const char* ssid     = "YOUR_WIFI_SSID";   
 >    const char* password = "YOUR_WIFI_PASSWORD";   
 
-Settings for 
-<a href="https://user-images.githubusercontent.com/31049131/141855094-01dc5a28-63c7-4538-a6fb-2701678cd886.png">Image of Arduino IDE setup</a>
+Settings for Arduino IDE setup <br>
+<a href="https://user-images.githubusercontent.com/31049131/141855094-01dc5a28-63c7-4538-a6fb-2701678cd886.png">Image</a>
 
 <br>
 
