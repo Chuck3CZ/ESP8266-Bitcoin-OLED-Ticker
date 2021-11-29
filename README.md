@@ -24,4 +24,7 @@ Only what you need is change WiFi setting configuration in line 28 and 29
 >    const char* password = "YOUR_WIFI_PASSWORD";   
 
 
-#To-Do
+
+# To-Do
+## To-Do
+Easy WiFi configurator
