@@ -25,5 +25,5 @@ Only what you need is change WiFi setting configuration (line 28 and 29) <a href
 
 
 
-## ✅ To-Do
+## ✅ To-Do list
 - Easy WiFi configurator
