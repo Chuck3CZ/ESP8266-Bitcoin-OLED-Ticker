@@ -15,6 +15,7 @@ ESP8266 Wemos D1 Mini +  0.66 inch 64X48 OLED
 ![Hnet com-image](https://user-images.githubusercontent.com/31049131/141833324-8143dc63-2829-4f13-8739-5dce29162fc5.jpg)
 
 <br>
+
 ## 🔧 SETUP
 <a href="https://user-images.githubusercontent.com/31049131/141855094-01dc5a28-63c7-4538-a6fb-2701678cd886.png">Image of Arduino IDE setup</a>
 
@@ -25,5 +26,6 @@ Only what you need is change WiFi setting configuration (line 28 and 29) <a href
 
 
 <br>
+
 ## ✅ To-Do list
 - Easy WiFi configurator
