@@ -25,7 +25,7 @@ Only what you need is **change WiFi setting** - configuration **line 28 and 29**
 
 <br>
 
-Settings for Arduino IDE setup 
+Settings for Arduino IDE setup  
 <a href="https://user-images.githubusercontent.com/31049131/141855094-01dc5a28-63c7-4538-a6fb-2701678cd886.png">Image</a>
 
 <br>
