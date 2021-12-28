@@ -1,17 +1,23 @@
+
+
 /*********************************************************************
 This is a Minimalist ESP8266 Oled Bitcoin price ticker 
 
 from site:
 https://github.com/Chuck3CZ/esp8266-oled-bitcoin-ticker
 
-This project is for ESP8266 with 64x48 size display using I2C to communicate
+This project is for ESP8266 with 64x48 size OLED display using I2C to communication 
 3 pins are required to interface (2 I2C and one reset)
 
 Written by Martin "Chuck3CZ" Gabrhel
 *********************************************************************/
 
-#include "ESP8266WiFi.h"
 
+#include <strings_en.h>
+#include <WiFiManager.h>
+#include "ESP8266WiFi.h"
+#include <ESP8266WebServer.h>
+#include <DNSServer.h>
 #include "WiFiClient.h"
 #include "WiFiServer.h"
 #include "SPI.h"
@@ -20,18 +26,26 @@ Written by Martin "Chuck3CZ" Gabrhel
 #include "Adafruit_SSD1306.h"
 #include "ArduinoJson.h"
 
-// SCL GPIO5 
-// SDA GPIO4
+WiFiServer server(80);
+String header;
+
+ // SCL GPIO5 
+ // SDA GPIO4
 
 #define OLED_RESET 0  // GPIO0
 Adafruit_SSD1306 display(OLED_RESET);
 
-const char* ssid     = "YOUR_WIFI_SSID";
-const char* password = "YOUR_WIFI_PASSWORD";
-const char* host = "api.coindesk.com";
+ const char* ssid     = "YOUR_WIFI_SSID";
+ const char* password = "YOUR_WIFI_PASSWORD";
+ const char* host = "api.coindesk.com";
 
 void setup()   {
   Serial.begin(9600);
+
+  WiFi.begin();
+
+  WiFiManager wifiManager;
+  wifiManager.autoConnect();
 
   // by default, generating the high voltage from the 3.3v line internally! (neat!)
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3C (for the 64x48)
@@ -49,25 +63,27 @@ void setup()   {
   
   // display.setTextColor(BLACK, WHITE); // 'inverted' text
 
+
   
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(0,0);
-  display.println("  Bitcoin   ticker");
-  display.setTextSize(2);
+  display.println("  BITCOIN   TICKER");
   display.println();
-  display.println("99999");
+  display.setTextSize(2);
+  display.setCursor(2,24);
+  display.println("88888");
   display.display();
   delay(2000);
   display.clearDisplay();
 
   display.setTextSize(1);
   display.setCursor(0,0);
-  display.println("  Bitcoin   ticker");
+ display.println("  BITCOIN   TICKER");
   display.setTextSize(2);
   display.println("     ");
   display.display();
-  delay(2000);
+  delay(400);
   display.clearDisplay();
 
 
@@ -76,37 +92,54 @@ void setup()   {
   Serial.print("Connecting to ");
   Serial.println(ssid);
 
-  WiFi.begin(ssid, password);
+
+  //WiFi.begin(ssid, password);
   
   
   while (WiFi.status() != WL_CONNECTED) 
   {
-  Serial.print("...");
+    Serial.print(".");
+  delay(50);
+    Serial.print(".");
+  delay(50);
+    Serial.print(".");
   
-  
-  display.setTextSize(1);
-  display.setCursor(0,0);
-  display.println("  Bitcoin   ticker");
-  display.display();
-    delay(500);
-  display.setCursor(0,24);
-  display.setTextSize(2);
-  display.println(" .  ");
-  display.display();
-    delay(500);
-  display.setCursor(0,24);
-  display.println("  .  ");
-  display.display();
-    delay(500);
-  display.setCursor(0,24);
-    display.println("   .  ");
-  display.display();
-    delay(500);
+// Main text
+   display.setTextSize(1);
+   display.setCursor(0,0);
+   display.println("  BITCOIN   TICKER");
+   display.display();
+ delay(500);
+    
+// Loading Dot 1    
+   display.setCursor(0,24); 
+   display.setTextSize(2);
+   display.println(" .  ");
+   display.display();
+ delay(500);
+    
+// Loading Dot 2       
+   display.setCursor(0,24);
+   display.println("  .  ");
+   display.display();
+ delay(500);
+        
+// Loading Dot 3   
+   display.setCursor(0,24);
+   display.println("   .  ");
+   display.display();
+ delay(500);
  
   display.clearDisplay();
-
-  
   }
+
+  display.setTextSize(1);
+  display.setCursor(0,0);
+  display.println("  BITCOIN   TICKER");
+  display.setCursor(0,24);
+  display.println(" Connected");
+  display.display();
+  
   
   Serial.println("");
   Serial.println("WiFi connected");
@@ -138,7 +171,6 @@ void loop() {
     String line = client.readStringUntil('\r');
     answer += line;
   }
-
   client.stop();
   
   String jsonAnswer;
@@ -166,23 +198,26 @@ void loop() {
     Serial.println(price);
 
   if(price > 0){
-   display.setTextSize(1);
+    display.clearDisplay();  
+  display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(0,0);
-  display.println(" BITCOIN   TICKER");
+  display.println("  BITCOIN   TICKER");
   display.println();
+  display.setCursor(2,24);
   display.setTextSize(2);
   display.println(priceString);
   display.display();
   delay(5000);
-  display.clearDisplay();
   }
   
   if(price = 0){
-   display.setTextSize(1);
+    display.clearDisplay(); 
+  display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(0,0);
   display.println(" BITCOIN   TICKER");
-  display.println("Price NOT  Found");
+  display.println(" Price     ERROR");
+  delay(5000);
   }
 }
