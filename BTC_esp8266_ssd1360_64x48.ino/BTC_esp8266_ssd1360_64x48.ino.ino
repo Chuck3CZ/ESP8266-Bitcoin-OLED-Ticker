@@ -11,6 +11,7 @@ Written by Martin "Chuck3CZ" Gabrhel
 *********************************************************************/
 
 #include "ESP8266WiFi.h"
+
 #include "WiFiClient.h"
 #include "WiFiServer.h"
 #include "SPI.h"
@@ -45,17 +46,30 @@ void setup()   {
   display.clearDisplay();
   
   // init text display
+  
+  // display.setTextColor(BLACK, WHITE); // 'inverted' text
+
+  
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(0,0);
   display.println("  Bitcoin   ticker");
-  // display.setTextColor(BLACK, WHITE); // 'inverted' text
   display.setTextSize(2);
-  display.setTextColor(WHITE);
-  display.println("999999");
+  display.println();
+  display.println("99999");
   display.display();
   delay(2000);
   display.clearDisplay();
+
+  display.setTextSize(1);
+  display.setCursor(0,0);
+  display.println("  Bitcoin   ticker");
+  display.setTextSize(2);
+  display.println("     ");
+  display.display();
+  delay(2000);
+  display.clearDisplay();
+
 
   Serial.println();
   Serial.println();
@@ -63,10 +77,35 @@ void setup()   {
   Serial.println(ssid);
 
   WiFi.begin(ssid, password);
+  
+  
   while (WiFi.status() != WL_CONNECTED) 
   {
-  delay(500);
-  Serial.print(".");
+  Serial.print("...");
+  
+  
+  display.setTextSize(1);
+  display.setCursor(0,0);
+  display.println("  Bitcoin   ticker");
+  display.display();
+    delay(500);
+  display.setCursor(0,24);
+  display.setTextSize(2);
+  display.println(" .  ");
+  display.display();
+    delay(500);
+  display.setCursor(0,24);
+  display.println("  .  ");
+  display.display();
+    delay(500);
+  display.setCursor(0,24);
+    display.println("   .  ");
+  display.display();
+    delay(500);
+ 
+  display.clearDisplay();
+
+  
   }
   
   Serial.println("");
