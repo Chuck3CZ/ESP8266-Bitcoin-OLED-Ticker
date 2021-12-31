@@ -13,11 +13,8 @@ Written by Martin "Chuck3CZ" Gabrhel
 *********************************************************************/
 
 
-#include <strings_en.h>
-#include <WiFiManager.h>
 #include "ESP8266WiFi.h"
 #include <ESP8266WebServer.h>
-#include <DNSServer.h>
 #include "WiFiClient.h"
 #include "WiFiServer.h"
 #include "SPI.h"
@@ -44,8 +41,6 @@ void setup()   {
 
   WiFi.begin();
 
-  WiFiManager wifiManager;
-  wifiManager.autoConnect();
 
   // by default, generating the high voltage from the 3.3v line internally! (neat!)
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3C (for the 64x48)
@@ -93,7 +88,7 @@ void setup()   {
   Serial.println(ssid);
 
 
-  //WiFi.begin(ssid, password);
+  WiFi.begin(ssid, password);
   
   
   while (WiFi.status() != WL_CONNECTED) 
