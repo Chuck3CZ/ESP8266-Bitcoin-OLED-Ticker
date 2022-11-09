@@ -27,8 +27,8 @@ String header;
 #define OLED_RESET 0  // GPIO0
 Adafruit_SSD1306 display(OLED_RESET);
 
-const char* ssid     = "Matty_Network";
-const char* password = "7312314196";
+const char* ssid     = "YOUR_WIFI_SSID";
+const char* password = "YOUR_WIFI_PASSWORD";
 const char* host     = "api.coindesk.com";
 
 void setup()   {
