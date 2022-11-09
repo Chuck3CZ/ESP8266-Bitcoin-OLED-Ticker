@@ -29,7 +29,7 @@ String header;
  // SCL GPIO5 
  // SDA GPIO4
 
-#define OLED_RESET 0  // GPIO0
+#define OLED_RESET 0  // GPIO0 
 Adafruit_SSD1306 display(OLED_RESET);
 
  const char* ssid     = "YOUR_WIFI_SSID";
