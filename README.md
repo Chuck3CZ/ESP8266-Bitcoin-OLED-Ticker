@@ -16,7 +16,7 @@ ESP8266 Wemos D1 Mini +  0.66 inch 64X48 OLED
 
 <br>
 
-## 🔧 SETUP
+## 🔧 SETUP ⚠️ (Old, works only for version 0.9)
 
 Only what you need is **change WiFi setting** configuration **line 35 and 36** in <a href="https://github.com/Chuck3CZ/ESP8266-Bitcoin-OLED-Ticker/blob/main/BTC_esp8266_ssd1360_64x48.ino">main .ino file</a>
 
@@ -25,7 +25,14 @@ Only what you need is **change WiFi setting** configuration **line 35 and 36** i
 
 <br>
 
-Settings for Arduino IDE setup  
+## 🔧 SETUP with Wi-Fi AP 🆙 (New, works only for version 1.0 and newer versions)
+
+Only what you need is **connect to WiFi BTCTicker_WiFi** and configure your WiFi SSID and password for this SSID....
+
+
+<br>
+
+Settings for flashing with Arduino IDE  
 <a href="https://user-images.githubusercontent.com/31049131/141855094-01dc5a28-63c7-4538-a6fb-2701678cd886.png">Image</a>
 
 <br>
