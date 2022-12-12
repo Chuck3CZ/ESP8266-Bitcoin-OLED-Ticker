@@ -31,7 +31,7 @@ Only what you need is **connect to WiFi BTCTicker_WiFi** and configure your WiFi
 
 Wi-Fi SSID             |  Wi-FI AP Server
 :-------------------------:|:-------------------------:
-![IMG_6172](https://user-images.githubusercontent.com/31049131/207057540-f3878239-6cdc-499a-b816-5a96851d8e16.PNG)  |  ![IMG_6171](https://user-images.githubusercontent.com/31049131/207057544-a75e4c42-614c-46e2-9d7f-6b5912996904.PNG)
+![IMG_6171](https://user-images.githubusercontent.com/31049131/207057544-a75e4c42-614c-46e2-9d7f-6b5912996904.PNG)  |  ![IMG_6172](https://user-images.githubusercontent.com/31049131/207057540-f3878239-6cdc-499a-b816-5a96851d8e16.PNG)
 
 
 
