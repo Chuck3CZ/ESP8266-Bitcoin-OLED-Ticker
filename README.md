@@ -28,8 +28,12 @@ Only what you need is **change WiFi setting** configuration **line 35 and 36** i
 ## 🔧 SETUP with Wi-Fi AP 🆙 (New, works only for version 1.0 and newer versions)
 
 Only what you need is **connect to WiFi BTCTicker_WiFi** and configure your WiFi SSID and password for this SSID....
-![IMG_6172](https://user-images.githubusercontent.com/31049131/207057540-f3878239-6cdc-499a-b816-5a96851d8e16.PNG)
-![IMG_6171](https://user-images.githubusercontent.com/31049131/207057544-a75e4c42-614c-46e2-9d7f-6b5912996904.PNG)
+
+Wi-Fi SSID             |  Wi-FI AP Server
+:-------------------------:|:-------------------------:
+![IMG_6172](https://user-images.githubusercontent.com/31049131/207057540-f3878239-6cdc-499a-b816-5a96851d8e16.PNG)  |  ![IMG_6171](https://user-images.githubusercontent.com/31049131/207057544-a75e4c42-614c-46e2-9d7f-6b5912996904.PNG)
+
+
 
 
 
