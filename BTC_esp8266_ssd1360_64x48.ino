@@ -9,7 +9,7 @@ https://github.com/Chuck3CZ/esp8266-oled-bitcoin-ticker
 This project is for ESP8266 with 64x48 size OLED display using I2C to communication 
 3 pins are required to interface (2 I2C and one reset)
 
-Written by Martin "Chuck3CZ" Gabrhel
+Written by Martin "Chuck3CZ" Gabrhel 
 *********************************************************************/
 
 
