@@ -229,7 +229,7 @@ void loop() {
   delay(5000);
   }
   
-  if(price = 0){
+  if(price == 0){
     display.clearDisplay(); 
   display.setTextSize(1);
   display.setTextColor(WHITE);
