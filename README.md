@@ -45,4 +45,4 @@ Settings for flashing with Arduino IDE
 <br>
 
 ## ✅ To-Do list
-- Easy WiFi configurator
+   ✅ Easy WiFi configurator
