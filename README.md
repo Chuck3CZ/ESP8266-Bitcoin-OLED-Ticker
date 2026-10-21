@@ -16,18 +16,25 @@ ESP8266 Wemos D1 Mini +  0.66 inch 64X48 OLED
 
 <br>
 
-## 🔧 SETUP ⚠️ (Old, works only for version 0.9)
+## 📚 Libraries
 
-Only what you need is **change WiFi setting** configuration **line 35 and 36** in <a href="https://github.com/Chuck3CZ/ESP8266-Bitcoin-OLED-Ticker/blob/main/BTC_esp8266_ssd1360_64x48.ino">main .ino file</a>
+Install the **ESP8266 board package** in Arduino IDE (Boards Manager). It already contains `ESP8266WiFi`, `ESP8266WebServer`, `DNSServer`, `EEPROM`, `Wire` and `SPI`.
 
->    const char* ssid     = "YOUR_WIFI_SSID";   
->    const char* password = "YOUR_WIFI_PASSWORD";   
+Then add these libraries:
+
+| Library | Where from |
+|---|---|
+| `Adafruit_SSD1306` | this repo – a patched version 1.1.0 with 64×48 support, copy the folder to `Arduino/libraries` |
+| `Adafruit_GFX` | this repo – version 1.0.2 that matches the patched SSD1306 driver, copy it the same way |
+| `ArduinoJson` 6.x | Library Manager (7.x also compiles, with deprecation warnings) |
+
+The price comes from the free [CoinGecko API](https://www.coingecko.com/en/api) (no key needed) and refreshes every 60 seconds.
 
 <br>
 
-## 🔧 SETUP with Wi-Fi AP 🆙 (New, works only for version 1.0 and newer versions)
+## 🔧 SETUP with Wi-Fi AP
 
-Only what you need is **connect to WiFi BTCTicker_WiFi** and configure your WiFi SSID and password for this SSID....
+On the first start (or when the saved Wi-Fi is not reachable) the ticker opens its own access point **`Ticker_SETUP`**. Connect to it, open **http://192.168.1.1/settings** (a captive portal usually opens on its own), select your network and enter its password. The ticker saves it to EEPROM and restarts.
 
 Wi-Fi SSID             |  Wi-FI AP Server
 :-------------------------:|:-------------------------:
